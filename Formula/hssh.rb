@@ -5,25 +5,25 @@
 class Hssh < Formula
   desc "Heply CLI to simplify the management of SSH hosts"
   homepage ""
-  version "0.0.2"
+  version "0.0.3"
   license "MIT"
   bottle :unneeded
 
   if OS.mac? && Hardware::CPU.intel?
-    url "https://github.com/heply/hssh/releases/download/0.0.2/hssh_0.0.2_darwin_amd64.tar.gz"
-    sha256 "6c22cc1aec04a6e50d5de5dfbb83c2a02a4e4587343fc837a32593ba64ae4bc2"
+    url "https://github.com/heply/hssh/releases/download/0.0.3/hssh_0.0.3_darwin_amd64.tar.gz"
+    sha256 "762048e4a3b0ee863a96b1eb6e0b3dd5b43a620c4e4139ff24dbe0e36119607d"
   end
   if OS.mac? && Hardware::CPU.arm?
-    url "https://github.com/heply/hssh/releases/download/0.0.2/hssh_0.0.2_darwin_arm64.tar.gz"
-    sha256 "bd8176adca0943f15a8abc86324fb67867461375be4d69ef0d6cdcc28406b453"
+    url "https://github.com/heply/hssh/releases/download/0.0.3/hssh_0.0.3_darwin_arm64.tar.gz"
+    sha256 "ed8939f63ee6e84ab95cbbf771a0f561895296006d55a7744ed7f46fadba3ee3"
   end
   if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/heply/hssh/releases/download/0.0.2/hssh_0.0.2_linux_amd64.tar.gz"
-    sha256 "37a8d668fc9d27227849e44e76a7bd050819259c1c580aefb55900213817e881"
+    url "https://github.com/heply/hssh/releases/download/0.0.3/hssh_0.0.3_linux_amd64.tar.gz"
+    sha256 "f88f10d19c6dceb7f4e6eba1478a17afc5aba8e73af4b5b07d77a3099c428ed1"
   end
   if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-    url "https://github.com/heply/hssh/releases/download/0.0.2/hssh_0.0.2_linux_arm64.tar.gz"
-    sha256 "a9e0ff6ef26c2be190639b704362d25ebb2e742700d47d7ba254d16fac74d613"
+    url "https://github.com/heply/hssh/releases/download/0.0.3/hssh_0.0.3_linux_arm64.tar.gz"
+    sha256 "c1231d617be778eecb6500051787bc08c8be6e88c9df2f550eabfd2a3f6fc006"
   end
 
   depends_on "fzf"
