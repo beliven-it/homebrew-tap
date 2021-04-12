@@ -5,30 +5,39 @@
 class Hssh < Formula
   desc "A CLI to easily sync, list, search and connect to SSH hosts"
   homepage ""
-  version "1.0.0"
+  version "1.1.0"
   license "MIT"
   bottle :unneeded
 
   if OS.mac? && Hardware::CPU.intel?
-    url "https://github.com/heply/hssh/releases/download/1.0.0/hssh_1.0.0_darwin_amd64.tar.gz"
-    sha256 "c86d67e588c673cdff6f106dde962dfeef7cb08bff305bd8ec5f3cc2da7ad897"
+    url "https://github.com/heply/hssh/releases/download/1.1.0/hssh_1.1.0_darwin_amd64.tar.gz"
+    sha256 "853e43b0f476af754b99b3cc673ff412d5ed8bc3f4c29c1c9028d54bcf922a49"
   end
   if OS.mac? && Hardware::CPU.arm?
-    url "https://github.com/heply/hssh/releases/download/1.0.0/hssh_1.0.0_darwin_arm64.tar.gz"
-    sha256 "382a234873bc20048a64761e0390d64fa77aff8ef329e1663db5c86d8929132e"
+    url "https://github.com/heply/hssh/releases/download/1.1.0/hssh_1.1.0_darwin_arm64.tar.gz"
+    sha256 "756144b643e796c0dc71682f553e4056d374d877f0810e517a257658cda0bddf"
   end
   if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/heply/hssh/releases/download/1.0.0/hssh_1.0.0_linux_amd64.tar.gz"
-    sha256 "5367af35b9226194c1337b097493562685fd50c10b1bbb4014700b006c874334"
+    url "https://github.com/heply/hssh/releases/download/1.1.0/hssh_1.1.0_linux_amd64.tar.gz"
+    sha256 "024bb193b2f8af58cac889ac19b070b54b0e9de12fdb6b9f29d218432fefd5c0"
   end
   if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-    url "https://github.com/heply/hssh/releases/download/1.0.0/hssh_1.0.0_linux_arm64.tar.gz"
-    sha256 "9f3c1e52421135928f9fe95015a92f27e0fd1bc6dd79344281b8a900371b03c3"
+    url "https://github.com/heply/hssh/releases/download/1.1.0/hssh_1.1.0_linux_arm64.tar.gz"
+    sha256 "7ce3cc91d90547832df393479a0c5fc9b64be82a79cae4788373967840f5ce93"
   end
 
   depends_on "fzf"
 
   def install
     bin.install "hssh"
+  end
+
+  def caveats; <<~EOS
+    Run `hssh init` to generate config file inside
+     `~/.config/hssh/config.yml` (works only if not exists yet)
+     or let the CLI creating it automatically on first run (every command).
+
+     Type `hssh help` for further information.
+  EOS
   end
 end
