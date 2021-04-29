@@ -5,25 +5,25 @@
 class Hssh < Formula
   desc "A CLI to easily sync, list, search and connect to SSH hosts"
   homepage ""
-  version "1.1.1"
+  version "1.1.2"
   license "MIT"
   bottle :unneeded
 
   if OS.mac? && Hardware::CPU.intel?
-    url "https://github.com/heply/hssh/releases/download/1.1.1/hssh_1.1.1_darwin_amd64.tar.gz"
-    sha256 "5560117bc9f9f205734efbd6da85c9827cc439c0f92ae5ba94e4ee00fe30c26d"
+    url "https://github.com/heply/hssh/releases/download/1.1.2/hssh_1.1.2_darwin_amd64.tar.gz"
+    sha256 "35f6e62224891bf0e97dd440c817c27b1de2cc04847b5beeec331ac5642df0dd"
   end
   if OS.mac? && Hardware::CPU.arm?
-    url "https://github.com/heply/hssh/releases/download/1.1.1/hssh_1.1.1_darwin_arm64.tar.gz"
-    sha256 "64a28bc1a1977ccad378da3d6537925d199965f0ed7a836a77cc03d770e9c6c8"
+    url "https://github.com/heply/hssh/releases/download/1.1.2/hssh_1.1.2_darwin_arm64.tar.gz"
+    sha256 "6da0b5947a21c84124b7f0bc90bc043037366c382a55bdbc1f00a23f74d1c984"
   end
   if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/heply/hssh/releases/download/1.1.1/hssh_1.1.1_linux_amd64.tar.gz"
-    sha256 "c2042bb367f6a6a9389dfbf38fe3fa87767de2c01b368b645ee6d65b86ebd93f"
+    url "https://github.com/heply/hssh/releases/download/1.1.2/hssh_1.1.2_linux_amd64.tar.gz"
+    sha256 "21157532942135b86194d14ac6e9c60ed11b969167734f7c8a0290ee70d9779e"
   end
   if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-    url "https://github.com/heply/hssh/releases/download/1.1.1/hssh_1.1.1_linux_arm64.tar.gz"
-    sha256 "8d25212a055a897ff21a8063197d9aa3f2cf54a7b91587471ba4db4adc4b3ff4"
+    url "https://github.com/heply/hssh/releases/download/1.1.2/hssh_1.1.2_linux_arm64.tar.gz"
+    sha256 "c74b92a4ad8cafdabcaa4bb2aca3e781a19179a7b0f8db0b34e2a13b182e50da"
   end
 
   depends_on "fzf"
