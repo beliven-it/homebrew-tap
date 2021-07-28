@@ -5,25 +5,30 @@
 class Hssh < Formula
   desc "A CLI to easily sync, list, search and connect to SSH hosts"
   homepage ""
-  version "1.1.2"
+  version "1.1.3"
   license "MIT"
   bottle :unneeded
 
-  if OS.mac? && Hardware::CPU.intel?
-    url "https://github.com/heply/hssh/releases/download/1.1.2/hssh_1.1.2_darwin_amd64.tar.gz"
-    sha256 "35f6e62224891bf0e97dd440c817c27b1de2cc04847b5beeec331ac5642df0dd"
+  on_macos do
+    if Hardware::CPU.intel?
+      url "https://github.com/heply/hssh/releases/download/1.1.3/hssh_1.1.3_darwin_amd64.tar.gz"
+      sha256 "b865b0d81871bc592d6ea7446fe0df372c4527ebb136c482e58354f1dc37f30b"
+    end
+    if Hardware::CPU.arm?
+      url "https://github.com/heply/hssh/releases/download/1.1.3/hssh_1.1.3_darwin_arm64.tar.gz"
+      sha256 "9c239d07af3e01a2f9053568dc8affd550a0a1cd1c2cfc46136ac76a7d6f403b"
+    end
   end
-  if OS.mac? && Hardware::CPU.arm?
-    url "https://github.com/heply/hssh/releases/download/1.1.2/hssh_1.1.2_darwin_arm64.tar.gz"
-    sha256 "6da0b5947a21c84124b7f0bc90bc043037366c382a55bdbc1f00a23f74d1c984"
-  end
-  if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/heply/hssh/releases/download/1.1.2/hssh_1.1.2_linux_amd64.tar.gz"
-    sha256 "21157532942135b86194d14ac6e9c60ed11b969167734f7c8a0290ee70d9779e"
-  end
-  if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-    url "https://github.com/heply/hssh/releases/download/1.1.2/hssh_1.1.2_linux_arm64.tar.gz"
-    sha256 "c74b92a4ad8cafdabcaa4bb2aca3e781a19179a7b0f8db0b34e2a13b182e50da"
+
+  on_linux do
+    if Hardware::CPU.intel?
+      url "https://github.com/heply/hssh/releases/download/1.1.3/hssh_1.1.3_linux_amd64.tar.gz"
+      sha256 "ea3473ad9abcfe5254c9571a30bd3252086fef5159e01fb9aa1d59642e73d7d2"
+    end
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/heply/hssh/releases/download/1.1.3/hssh_1.1.3_linux_arm64.tar.gz"
+      sha256 "974706e40c7080d0d38741b78b35c1feedfed077f56d22059ea47a2347b87cab"
+    end
   end
 
   depends_on "fzf"
