@@ -5,37 +5,48 @@
 class Hssh < Formula
   desc "A CLI to easily sync, list, search and connect to SSH hosts"
   homepage ""
-  version "1.1.3"
+  version "1.1.4"
   license "MIT"
-  bottle :unneeded
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/heply/hssh/releases/download/1.1.3/hssh_1.1.3_darwin_amd64.tar.gz"
-      sha256 "b865b0d81871bc592d6ea7446fe0df372c4527ebb136c482e58354f1dc37f30b"
-    end
     if Hardware::CPU.arm?
-      url "https://github.com/heply/hssh/releases/download/1.1.3/hssh_1.1.3_darwin_arm64.tar.gz"
-      sha256 "9c239d07af3e01a2f9053568dc8affd550a0a1cd1c2cfc46136ac76a7d6f403b"
+      url "https://github.com/heply/hssh/releases/download/1.1.4/hssh_1.1.4_darwin_arm64.tar.gz"
+      sha256 "d05a63c40104a783984034ea8d6fe168d259a074f0cc1e4a17369d3a120f5eaf"
+
+      def install
+        bin.install "hssh"
+      end
+    end
+    if Hardware::CPU.intel?
+      url "https://github.com/heply/hssh/releases/download/1.1.4/hssh_1.1.4_darwin_amd64.tar.gz"
+      sha256 "b4dfc168580959146dd6ff4ca90febd9f365ec40aa222b18c82c01b81adf6549"
+
+      def install
+        bin.install "hssh"
+      end
     end
   end
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/heply/hssh/releases/download/1.1.3/hssh_1.1.3_linux_amd64.tar.gz"
-      sha256 "ea3473ad9abcfe5254c9571a30bd3252086fef5159e01fb9aa1d59642e73d7d2"
+      url "https://github.com/heply/hssh/releases/download/1.1.4/hssh_1.1.4_linux_amd64.tar.gz"
+      sha256 "7b00f45d01d9331e692f44a60ec8a71253b84f8cba841baf09e64c457b99957d"
+
+      def install
+        bin.install "hssh"
+      end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/heply/hssh/releases/download/1.1.3/hssh_1.1.3_linux_arm64.tar.gz"
-      sha256 "974706e40c7080d0d38741b78b35c1feedfed077f56d22059ea47a2347b87cab"
+      url "https://github.com/heply/hssh/releases/download/1.1.4/hssh_1.1.4_linux_arm64.tar.gz"
+      sha256 "8cef7a79a2dadb8332145d8c6b6984f80e6eaa9fe676565a7af8c5f9f07e627c"
+
+      def install
+        bin.install "hssh"
+      end
     end
   end
 
   depends_on "fzf"
-
-  def install
-    bin.install "hssh"
-  end
 
   def caveats; <<~EOS
     Run `hssh init` to generate config file inside
