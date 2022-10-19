@@ -5,21 +5,23 @@
 class Hssh < Formula
   desc "A CLI to easily sync, list, search and connect to SSH hosts"
   homepage ""
-  version "1.1.4"
+  version "1.1.5"
   license "MIT"
 
+  depends_on "fzf"
+
   on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/beliven-it/hssh/releases/download/1.1.4/hssh_1.1.4_darwin_arm64.tar.gz"
-      sha256 "d05a63c40104a783984034ea8d6fe168d259a074f0cc1e4a17369d3a120f5eaf"
+    if Hardware::CPU.intel?
+      url "https://github.com/beliven-it/hssh/releases/download/1.1.5/hssh_1.1.5_darwin_amd64.tar.gz"
+      sha256 "8e462ddd02c30e9e83b7867f05a9b10c4af0e9fa7872fc1dc46bbf83ea35aa39"
 
       def install
         bin.install "hssh"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/beliven-it/hssh/releases/download/1.1.4/hssh_1.1.4_darwin_amd64.tar.gz"
-      sha256 "b4dfc168580959146dd6ff4ca90febd9f365ec40aa222b18c82c01b81adf6549"
+    if Hardware::CPU.arm?
+      url "https://github.com/beliven-it/hssh/releases/download/1.1.5/hssh_1.1.5_darwin_arm64.tar.gz"
+      sha256 "883a665d2efeb63d67ba2df8252609eb04c68e962f94da65b7c259e4e13afc75"
 
       def install
         bin.install "hssh"
@@ -28,17 +30,17 @@ class Hssh < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/beliven-it/hssh/releases/download/1.1.4/hssh_1.1.4_linux_amd64.tar.gz"
-      sha256 "7b00f45d01d9331e692f44a60ec8a71253b84f8cba841baf09e64c457b99957d"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/beliven-it/hssh/releases/download/1.1.5/hssh_1.1.5_linux_arm64.tar.gz"
+      sha256 "b1ebb06e8f55e5d689116fd5527a00ea9dee0c891e3750174b96f439c2a682de"
 
       def install
         bin.install "hssh"
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/beliven-it/hssh/releases/download/1.1.4/hssh_1.1.4_linux_arm64.tar.gz"
-      sha256 "8cef7a79a2dadb8332145d8c6b6984f80e6eaa9fe676565a7af8c5f9f07e627c"
+    if Hardware::CPU.intel?
+      url "https://github.com/beliven-it/hssh/releases/download/1.1.5/hssh_1.1.5_linux_amd64.tar.gz"
+      sha256 "21590c615f8f7a89bc93acb3ae0dd1f1b682d56a978607272902386f4fc7bc65"
 
       def install
         bin.install "hssh"
@@ -46,14 +48,13 @@ class Hssh < Formula
     end
   end
 
-  depends_on "fzf"
+  def caveats
+    <<~EOS
+      Run `hssh init` to generate config file inside
+       `~/.config/hssh/config.yml` (works only if not exists yet)
+       or let the CLI creating it automatically on first run (every command).
 
-  def caveats; <<~EOS
-    Run `hssh init` to generate config file inside
-     `~/.config/hssh/config.yml` (works only if not exists yet)
-     or let the CLI creating it automatically on first run (every command).
-
-     Type `hssh help` for further information.
-  EOS
+       Type `hssh help` for further information.
+    EOS
   end
 end
