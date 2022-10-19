@@ -1,2 +1,2 @@
 # homebrew-tap
-macOS Homebrew formulas to install Heply open source software
+macOS Homebrew formulas to install Beliven open source software
