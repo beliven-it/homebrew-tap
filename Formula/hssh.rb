@@ -5,23 +5,23 @@
 class Hssh < Formula
   desc "A CLI to easily sync, list, search and connect to SSH hosts"
   homepage ""
-  version "1.1.6"
+  version "1.2.0"
   license "MIT"
 
   depends_on "fzf"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/beliven-it/hssh/releases/download/1.1.6/hssh_1.1.6_darwin_amd64.tar.gz"
-      sha256 "49ef4f9be8fc7bf88d11fc9eab66d913f22bb655b480e6fe1d8b4672052c9fec"
+      url "https://github.com/beliven-it/hssh/releases/download/1.2.0/hssh_1.2.0_darwin_amd64.tar.gz"
+      sha256 "360301188572794b3f6f2ecb658bfbe1d883a85f3dab1f5d1885215a6116638d"
 
       def install
         bin.install "hssh"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/beliven-it/hssh/releases/download/1.1.6/hssh_1.1.6_darwin_arm64.tar.gz"
-      sha256 "8d175c1dbac8e97d7a962a62ce8c1dbf5bc1027dc08d38ebb687d150cc68c894"
+      url "https://github.com/beliven-it/hssh/releases/download/1.2.0/hssh_1.2.0_darwin_arm64.tar.gz"
+      sha256 "703f396038541a51dc3617e5218b6b9b47508cdf35e8045d63683d770af53d55"
 
       def install
         bin.install "hssh"
@@ -31,16 +31,16 @@ class Hssh < Formula
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/beliven-it/hssh/releases/download/1.1.6/hssh_1.1.6_linux_arm64.tar.gz"
-      sha256 "ad21958963a31552af18f8d6355b715626b5288b96d12f2afd50e6f4abda52c0"
+      url "https://github.com/beliven-it/hssh/releases/download/1.2.0/hssh_1.2.0_linux_arm64.tar.gz"
+      sha256 "b57eb05a10062d937bc0f83591da1f0344d8d6b4629c2a7ae0a4706f58ef4c4e"
 
       def install
         bin.install "hssh"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/beliven-it/hssh/releases/download/1.1.6/hssh_1.1.6_linux_amd64.tar.gz"
-      sha256 "3f00bacb8c214183e50a07e27a95b5a5bce1f8c1b9d8cc08cfd3ca7791160212"
+      url "https://github.com/beliven-it/hssh/releases/download/1.2.0/hssh_1.2.0_linux_amd64.tar.gz"
+      sha256 "f2b664130368d894ed3965935f919dd388013cf977367d87353ae44d4dcbf4f8"
 
       def install
         bin.install "hssh"
