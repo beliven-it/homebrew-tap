@@ -5,23 +5,23 @@
 class Opsi < Formula
   desc "All-in-one CLI for Beliven Ops daily usage!"
   homepage ""
-  version "1.1.0"
+  version "1.2.0"
   license "MIT"
 
   depends_on "fzf"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/beliven-it/opsi/releases/download/1.1.0/opsi_1.1.0_darwin_amd64.tar.gz"
-      sha256 "4c6f1f33eda36bbb88ee2ef1bf3bdaf1f3a73d8805f296473e4ed3f6f912b04b"
+      url "https://github.com/beliven-it/opsi/releases/download/1.2.0/opsi_1.2.0_darwin_amd64.tar.gz"
+      sha256 "c928a9a2c7fd925f1ea4536fb138c340b7a96f67c10a087f80fb2379b429197e"
 
       def install
         bin.install "opsi"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/beliven-it/opsi/releases/download/1.1.0/opsi_1.1.0_darwin_arm64.tar.gz"
-      sha256 "3772084dd5ae5dceb25a3e8e314375bf3b388fad1a95e880ace92ce7e4d486d0"
+      url "https://github.com/beliven-it/opsi/releases/download/1.2.0/opsi_1.2.0_darwin_arm64.tar.gz"
+      sha256 "1febc255d1a75716ebce6370582bdc86f8e9fe947bf89ac56b856471fa90d37c"
 
       def install
         bin.install "opsi"
@@ -30,17 +30,17 @@ class Opsi < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/beliven-it/opsi/releases/download/1.1.0/opsi_1.1.0_linux_amd64.tar.gz"
-      sha256 "e7ef01f046648e3cda651546ea34d02b0410711e5bbe758952a03ec666f213f1"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/beliven-it/opsi/releases/download/1.2.0/opsi_1.2.0_linux_arm64.tar.gz"
+      sha256 "5f263fdc005e8da6272ea9131f7318729b8ebdd027ded02e56d5a69247406256"
 
       def install
         bin.install "opsi"
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/beliven-it/opsi/releases/download/1.1.0/opsi_1.1.0_linux_arm64.tar.gz"
-      sha256 "44bc6dcd2ce9e341a336e75d3aeb29e037d7b65f0f6952b61583ccc84c5d8fdb"
+    if Hardware::CPU.intel?
+      url "https://github.com/beliven-it/opsi/releases/download/1.2.0/opsi_1.2.0_linux_amd64.tar.gz"
+      sha256 "c579b443a6f1e2ceb0aa78c445378d10559b3f375ca5e38cc267984f21e53d51"
 
       def install
         bin.install "opsi"
