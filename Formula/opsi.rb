@@ -5,23 +5,21 @@
 class Opsi < Formula
   desc "All-in-one CLI for Beliven Ops daily usage!"
   homepage ""
-  version "1.2.0"
+  version "1.2.1"
   license "MIT"
 
-  depends_on "fzf"
-
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/beliven-it/opsi/releases/download/1.2.0/opsi_1.2.0_darwin_amd64.tar.gz"
-      sha256 "c928a9a2c7fd925f1ea4536fb138c340b7a96f67c10a087f80fb2379b429197e"
+    if Hardware::CPU.arm?
+      url "https://github.com/beliven-it/opsi/releases/download/1.2.1/opsi_1.2.1_darwin_arm64.tar.gz"
+      sha256 "c7188bf8a4172653a90a7d5a908fa539fa7004d32f81b2818c90a5d5d03aec22"
 
       def install
         bin.install "opsi"
       end
     end
-    if Hardware::CPU.arm?
-      url "https://github.com/beliven-it/opsi/releases/download/1.2.0/opsi_1.2.0_darwin_arm64.tar.gz"
-      sha256 "1febc255d1a75716ebce6370582bdc86f8e9fe947bf89ac56b856471fa90d37c"
+    if Hardware::CPU.intel?
+      url "https://github.com/beliven-it/opsi/releases/download/1.2.1/opsi_1.2.1_darwin_amd64.tar.gz"
+      sha256 "f7b920cb92398e4fd8c9fbcae521408f18a2de51c571ec7e381addf863160d1b"
 
       def install
         bin.install "opsi"
@@ -30,17 +28,17 @@ class Opsi < Formula
   end
 
   on_linux do
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/beliven-it/opsi/releases/download/1.2.0/opsi_1.2.0_linux_arm64.tar.gz"
-      sha256 "5f263fdc005e8da6272ea9131f7318729b8ebdd027ded02e56d5a69247406256"
+    if Hardware::CPU.intel?
+      url "https://github.com/beliven-it/opsi/releases/download/1.2.1/opsi_1.2.1_linux_amd64.tar.gz"
+      sha256 "c8892c264edd223504045703dd4b19d268b79c6f9c38dacda6bc0dfc3c119853"
 
       def install
         bin.install "opsi"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/beliven-it/opsi/releases/download/1.2.0/opsi_1.2.0_linux_amd64.tar.gz"
-      sha256 "c579b443a6f1e2ceb0aa78c445378d10559b3f375ca5e38cc267984f21e53d51"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/beliven-it/opsi/releases/download/1.2.1/opsi_1.2.1_linux_arm64.tar.gz"
+      sha256 "ca95adc3b063506da1d76268a31f92ef4e9c2549f6103a779c2459c6c8ddfe39"
 
       def install
         bin.install "opsi"
@@ -52,6 +50,7 @@ class Opsi < Formula
     <<~EOS
       Run `opsi init` to generate config file inside
        `~/.config/opsi/config.yml` (works only if not exists yet).
+
        Type `opsi help` for further information.
     EOS
   end
