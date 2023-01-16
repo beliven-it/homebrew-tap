@@ -5,24 +5,23 @@
 class Opsi < Formula
   desc "All-in-one CLI for Beliven Ops daily usage!"
   homepage ""
-  version "1.2.1"
+  version "1.2.0"
   license "MIT"
 
-  depends_on "1password-cli"
-  depends_on "hssh"
+  depends_on "fzf"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/beliven-it/opsi/releases/download/1.2.1/opsi_1.2.1_darwin_amd64.tar.gz"
-      sha256 "35f60dcf9f29cab479694bf95d355a73a6755c6c3d71c6a7dc782e10b2ae0bb5"
+      url "https://github.com/beliven-it/opsi/releases/download/1.2.0/opsi_1.2.0_darwin_amd64.tar.gz"
+      sha256 "c928a9a2c7fd925f1ea4536fb138c340b7a96f67c10a087f80fb2379b429197e"
 
       def install
         bin.install "opsi"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/beliven-it/opsi/releases/download/1.2.1/opsi_1.2.1_darwin_arm64.tar.gz"
-      sha256 "aab22d252ec1aad5bba0e052233c37296b2efa009fae3849dd6ad3350ff2ae3d"
+      url "https://github.com/beliven-it/opsi/releases/download/1.2.0/opsi_1.2.0_darwin_arm64.tar.gz"
+      sha256 "1febc255d1a75716ebce6370582bdc86f8e9fe947bf89ac56b856471fa90d37c"
 
       def install
         bin.install "opsi"
@@ -31,17 +30,17 @@ class Opsi < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/beliven-it/opsi/releases/download/1.2.1/opsi_1.2.1_linux_amd64.tar.gz"
-      sha256 "c46b81310212041572b77ab33f534b2059c4be07024d95010b81aa0c1f481bd7"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/beliven-it/opsi/releases/download/1.2.0/opsi_1.2.0_linux_arm64.tar.gz"
+      sha256 "5f263fdc005e8da6272ea9131f7318729b8ebdd027ded02e56d5a69247406256"
 
       def install
         bin.install "opsi"
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/beliven-it/opsi/releases/download/1.2.1/opsi_1.2.1_linux_arm64.tar.gz"
-      sha256 "56c1d20f7a8c8281477dcf442dfedce9ab85877912a9d60acdd5147033f9e567"
+    if Hardware::CPU.intel?
+      url "https://github.com/beliven-it/opsi/releases/download/1.2.0/opsi_1.2.0_linux_amd64.tar.gz"
+      sha256 "c579b443a6f1e2ceb0aa78c445378d10559b3f375ca5e38cc267984f21e53d51"
 
       def install
         bin.install "opsi"
