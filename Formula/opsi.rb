@@ -5,21 +5,21 @@
 class Opsi < Formula
   desc "All-in-one CLI for Beliven Ops daily usage!"
   homepage ""
-  version "1.4.0"
+  version "1.5.0"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/beliven-it/opsi/releases/download/1.4.0/opsi_1.4.0_darwin_amd64.tar.gz"
-      sha256 "a5056d40bd37cd58aac17fe905070641d94314fda87907c0adaa9e6d46454632"
+      url "https://github.com/beliven-it/opsi/releases/download/1.5.0/opsi_1.5.0_darwin_amd64.tar.gz"
+      sha256 "50af2216142de9298e141e4a649a962d79adec40e7727d33123da8b866f981dd"
 
       def install
         bin.install "opsi"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/beliven-it/opsi/releases/download/1.4.0/opsi_1.4.0_darwin_arm64.tar.gz"
-      sha256 "13458da4765e06593529f232c4d3f6f3f4f058b38bd457f28e1eb518947a76c4"
+      url "https://github.com/beliven-it/opsi/releases/download/1.5.0/opsi_1.5.0_darwin_arm64.tar.gz"
+      sha256 "19c1bba483f693667c69f28338085f7afec83297d3c70877d1fd47e45e65deb7"
 
       def install
         bin.install "opsi"
@@ -28,17 +28,17 @@ class Opsi < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/beliven-it/opsi/releases/download/1.4.0/opsi_1.4.0_linux_amd64.tar.gz"
-      sha256 "9b0aeac522dee604fcd66f372576de0a3c79719a600e7d9e8e738de6b1404fac"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/beliven-it/opsi/releases/download/1.5.0/opsi_1.5.0_linux_arm64.tar.gz"
+      sha256 "daabd45aab83a21c122de13f6343b14b296737c78b2524012db555ea09e26f0c"
 
       def install
         bin.install "opsi"
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/beliven-it/opsi/releases/download/1.4.0/opsi_1.4.0_linux_arm64.tar.gz"
-      sha256 "52da9017305158fecd025075a7d60cfad95f1946785b1301e51948d6eac1a0da"
+    if Hardware::CPU.intel?
+      url "https://github.com/beliven-it/opsi/releases/download/1.5.0/opsi_1.5.0_linux_amd64.tar.gz"
+      sha256 "576b945b56331e49b73e9033bf7f92e163814f0a8fc07c4e8c27b9bf29e54368"
 
       def install
         bin.install "opsi"
