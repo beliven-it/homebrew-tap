@@ -5,21 +5,21 @@
 class Opsi < Formula
   desc "All-in-one CLI for Beliven Ops daily usage!"
   homepage ""
-  version "1.5.0"
+  version "1.6.0"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/beliven-it/opsi/releases/download/1.5.0/opsi_1.5.0_darwin_amd64.tar.gz"
-      sha256 "50af2216142de9298e141e4a649a962d79adec40e7727d33123da8b866f981dd"
+      url "https://github.com/beliven-it/opsi/releases/download/1.6.0/opsi_1.6.0_darwin_amd64.tar.gz"
+      sha256 "d26511b6d3bfc53c81826f027b22a3f4de50002f76e06a72a994aa2e2a837336"
 
       def install
         bin.install "opsi"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/beliven-it/opsi/releases/download/1.5.0/opsi_1.5.0_darwin_arm64.tar.gz"
-      sha256 "19c1bba483f693667c69f28338085f7afec83297d3c70877d1fd47e45e65deb7"
+      url "https://github.com/beliven-it/opsi/releases/download/1.6.0/opsi_1.6.0_darwin_arm64.tar.gz"
+      sha256 "478430382aa211da953e5c7ed3d606695a2eb516f1fe96dfd645d04c164cca11"
 
       def install
         bin.install "opsi"
@@ -29,16 +29,16 @@ class Opsi < Formula
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/beliven-it/opsi/releases/download/1.5.0/opsi_1.5.0_linux_arm64.tar.gz"
-      sha256 "daabd45aab83a21c122de13f6343b14b296737c78b2524012db555ea09e26f0c"
+      url "https://github.com/beliven-it/opsi/releases/download/1.6.0/opsi_1.6.0_linux_arm64.tar.gz"
+      sha256 "b1b0c37184cc563fe0a137585c21c17ec0f7cb5af10bba7bb38f625d27d6e609"
 
       def install
         bin.install "opsi"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/beliven-it/opsi/releases/download/1.5.0/opsi_1.5.0_linux_amd64.tar.gz"
-      sha256 "576b945b56331e49b73e9033bf7f92e163814f0a8fc07c4e8c27b9bf29e54368"
+      url "https://github.com/beliven-it/opsi/releases/download/1.6.0/opsi_1.6.0_linux_amd64.tar.gz"
+      sha256 "7b665085168443afa2c23fa0cd4228e31315efc38a7e1856c9e3fe92808a115a"
 
       def install
         bin.install "opsi"
