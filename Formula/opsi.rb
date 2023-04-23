@@ -5,21 +5,21 @@
 class Opsi < Formula
   desc "All-in-one CLI for Beliven Ops daily usage!"
   homepage ""
-  version "1.6.0"
+  version "1.7.0"
   license "MIT"
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/beliven-it/opsi/releases/download/1.6.0/opsi_1.6.0_darwin_amd64.tar.gz"
-      sha256 "d26511b6d3bfc53c81826f027b22a3f4de50002f76e06a72a994aa2e2a837336"
+    if Hardware::CPU.arm?
+      url "https://github.com/beliven-it/opsi/releases/download/1.7.0/opsi_1.7.0_darwin_arm64.tar.gz"
+      sha256 "b2371cf98ec7ef5efb76f49bd81278c90b460cc6b6bbf8ff7d31dac64e2700ec"
 
       def install
         bin.install "opsi"
       end
     end
-    if Hardware::CPU.arm?
-      url "https://github.com/beliven-it/opsi/releases/download/1.6.0/opsi_1.6.0_darwin_arm64.tar.gz"
-      sha256 "478430382aa211da953e5c7ed3d606695a2eb516f1fe96dfd645d04c164cca11"
+    if Hardware::CPU.intel?
+      url "https://github.com/beliven-it/opsi/releases/download/1.7.0/opsi_1.7.0_darwin_amd64.tar.gz"
+      sha256 "0f16a3c4046854b94549ed25fb4df451be15cd710713868cb34e8c8ccb3627e9"
 
       def install
         bin.install "opsi"
@@ -28,17 +28,17 @@ class Opsi < Formula
   end
 
   on_linux do
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/beliven-it/opsi/releases/download/1.6.0/opsi_1.6.0_linux_arm64.tar.gz"
-      sha256 "b1b0c37184cc563fe0a137585c21c17ec0f7cb5af10bba7bb38f625d27d6e609"
+    if Hardware::CPU.intel?
+      url "https://github.com/beliven-it/opsi/releases/download/1.7.0/opsi_1.7.0_linux_amd64.tar.gz"
+      sha256 "6385a29dcf05ab69906ea2e85c0439f3aa0cd52a8a22b97bcea8793639e65dc8"
 
       def install
         bin.install "opsi"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/beliven-it/opsi/releases/download/1.6.0/opsi_1.6.0_linux_amd64.tar.gz"
-      sha256 "7b665085168443afa2c23fa0cd4228e31315efc38a7e1856c9e3fe92808a115a"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/beliven-it/opsi/releases/download/1.7.0/opsi_1.7.0_linux_arm64.tar.gz"
+      sha256 "32cddb7eae1fde3f0abecccb9632ca49d33356dc678c3b8d2f94f15bafc01c66"
 
       def install
         bin.install "opsi"
