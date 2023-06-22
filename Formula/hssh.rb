@@ -5,23 +5,23 @@
 class Hssh < Formula
   desc "A CLI to easily sync, list, search and connect to SSH hosts"
   homepage ""
-  version "1.2.2"
+  version "1.3.0"
   license "MIT"
 
   depends_on "fzf"
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/beliven-it/hssh/releases/download/1.2.2/hssh_1.2.2_darwin_amd64.tar.gz"
-      sha256 "2d6671055ecae506653cf5bd95355f83c4f547a1b410cc1f990869f64b041710"
+    if Hardware::CPU.arm?
+      url "https://github.com/beliven-it/hssh/releases/download/1.3.0/hssh_1.3.0_darwin_arm64.tar.gz"
+      sha256 "1887b199f8b1c916758418d41c07bca9231fa4e02b3dab6d969e1be8554801aa"
 
       def install
         bin.install "hssh"
       end
     end
-    if Hardware::CPU.arm?
-      url "https://github.com/beliven-it/hssh/releases/download/1.2.2/hssh_1.2.2_darwin_arm64.tar.gz"
-      sha256 "91015b69da7e3566970318be75c56207a8e359de6bfe9b92ed4371801ffa4bc3"
+    if Hardware::CPU.intel?
+      url "https://github.com/beliven-it/hssh/releases/download/1.3.0/hssh_1.3.0_darwin_amd64.tar.gz"
+      sha256 "43e613d87c35ad64aed5ddf965ca53c90a374fe9ba5864b22e10a044517fa30e"
 
       def install
         bin.install "hssh"
@@ -30,17 +30,17 @@ class Hssh < Formula
   end
 
   on_linux do
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/beliven-it/hssh/releases/download/1.2.2/hssh_1.2.2_linux_arm64.tar.gz"
-      sha256 "8667d3157fd13c4c94b353adb9d7b45ebfd65699e980ed47d6c84b23dd8ce221"
+    if Hardware::CPU.intel?
+      url "https://github.com/beliven-it/hssh/releases/download/1.3.0/hssh_1.3.0_linux_amd64.tar.gz"
+      sha256 "e40b9f46754eb5af71644fe0873976ff264f72e820b42cf76b368e66f8a59762"
 
       def install
         bin.install "hssh"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/beliven-it/hssh/releases/download/1.2.2/hssh_1.2.2_linux_amd64.tar.gz"
-      sha256 "3392ccccd766fca2fe5c5e7b1d1850e2e0628eccb09fc7eed297676869506856"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/beliven-it/hssh/releases/download/1.3.0/hssh_1.3.0_linux_arm64.tar.gz"
+      sha256 "2f3655040b343419169aab0151f7bb0e3984f6556873874acd8fa36e289e2706"
 
       def install
         bin.install "hssh"
