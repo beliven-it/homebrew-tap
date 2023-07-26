@@ -5,21 +5,21 @@
 class Opsi < Formula
   desc "All-in-one CLI for Beliven Ops daily usage!"
   homepage ""
-  version "1.9.0"
+  version "1.10.0"
   license "MIT"
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/beliven-it/opsi/releases/download/1.9.0/opsi_1.9.0_darwin_arm64.tar.gz"
-      sha256 "0f71b31acfed2883e42feb877d0ef622895b85c465e14883f3ef76beddbca851"
+    if Hardware::CPU.intel?
+      url "https://github.com/beliven-it/opsi/releases/download/1.10.0/opsi_1.10.0_darwin_amd64.tar.gz"
+      sha256 "22be7fb64e25f43006957a53cec8aa024f6e79659af7b6ae4a441d8cb386a3fd"
 
       def install
         bin.install "opsi"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/beliven-it/opsi/releases/download/1.9.0/opsi_1.9.0_darwin_amd64.tar.gz"
-      sha256 "73db755d26280cce9446a55a32ba3dccc523b7113bce929d7308b247f8707fc1"
+    if Hardware::CPU.arm?
+      url "https://github.com/beliven-it/opsi/releases/download/1.10.0/opsi_1.10.0_darwin_arm64.tar.gz"
+      sha256 "3abff920e734c7c1c8fa53d00d6b073434638c8e7db915a924f3a08e300d1efc"
 
       def install
         bin.install "opsi"
@@ -29,16 +29,16 @@ class Opsi < Formula
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/beliven-it/opsi/releases/download/1.9.0/opsi_1.9.0_linux_amd64.tar.gz"
-      sha256 "2e6abadc0fcb71cfd496d21de2f7751ddac2b574d1b62f2280046f87907f211e"
+      url "https://github.com/beliven-it/opsi/releases/download/1.10.0/opsi_1.10.0_linux_amd64.tar.gz"
+      sha256 "1a2d528e0247e5198e334da637f08fae82a296d05800297e3d1c27e9f6f991c4"
 
       def install
         bin.install "opsi"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/beliven-it/opsi/releases/download/1.9.0/opsi_1.9.0_linux_arm64.tar.gz"
-      sha256 "63d469ff2d10cc77697a79c1809325adaa44df433121b57751f655bc93d90990"
+      url "https://github.com/beliven-it/opsi/releases/download/1.10.0/opsi_1.10.0_linux_arm64.tar.gz"
+      sha256 "86afabebae8a0462c0fb8201b64ca0d000b06ec636845702199a39dcb18ad0af"
 
       def install
         bin.install "opsi"
