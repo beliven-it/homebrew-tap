@@ -5,23 +5,23 @@
 class Tssh < Formula
   desc "A CLI to easily sync, list, search and connect to Goleport nodes"
   homepage ""
-  version "1.1.0-rc"
+  version "1.2.0"
   license "MIT"
 
   depends_on "fzf"
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/beliven-it/tssh/releases/download/v1.1.0-rc/tssh_1.1.0-rc_darwin_arm64.tar.gz"
-      sha256 "91ebb5f3473bd9432f6c669910becf5155a4979dbe8e77f5ee54d22462cc667e"
+    if Hardware::CPU.intel?
+      url "https://github.com/beliven-it/tssh/releases/download/v1.2.0/tssh_1.2.0_darwin_amd64.tar.gz"
+      sha256 "2626224fa179f5b12c2db2c74dfcbe369a388d26982f6ac5ffb27aeedf5b770d"
 
       def install
         bin.install "tssh"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/beliven-it/tssh/releases/download/v1.1.0-rc/tssh_1.1.0-rc_darwin_amd64.tar.gz"
-      sha256 "e640e41c008602d92b3564091825aa3c0985cfb74dcd490e32b4ffb8925b1d90"
+    if Hardware::CPU.arm?
+      url "https://github.com/beliven-it/tssh/releases/download/v1.2.0/tssh_1.2.0_darwin_arm64.tar.gz"
+      sha256 "e237a087ca58e35e7c0df070ccf7a8fc4912fab60fd58b15541c6c0ed06139db"
 
       def install
         bin.install "tssh"
@@ -31,16 +31,16 @@ class Tssh < Formula
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/beliven-it/tssh/releases/download/v1.1.0-rc/tssh_1.1.0-rc_linux_amd64.tar.gz"
-      sha256 "ac721079edbc05281e186124a158508033a3e6f2598007553aa0f94c35007ddd"
+      url "https://github.com/beliven-it/tssh/releases/download/v1.2.0/tssh_1.2.0_linux_amd64.tar.gz"
+      sha256 "a4cb6191a7bba9dfca9fceda4bbdd9ba0e8ae3bfaba8bc8e26fcd3e6bfefc393"
 
       def install
         bin.install "tssh"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/beliven-it/tssh/releases/download/v1.1.0-rc/tssh_1.1.0-rc_linux_arm64.tar.gz"
-      sha256 "8acec5ec3bdbbdd3507f57747a47b6c1b26b01314bbad20cefad2ad7cd8dc360"
+      url "https://github.com/beliven-it/tssh/releases/download/v1.2.0/tssh_1.2.0_linux_arm64.tar.gz"
+      sha256 "7fe7f618eb72fffaa40427ead14ff43913ccdce8446114e3f6870274e2effbc1"
 
       def install
         bin.install "tssh"
