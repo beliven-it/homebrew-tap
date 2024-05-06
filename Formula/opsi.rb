@@ -11,7 +11,7 @@ class Opsi < Formula
   on_macos do
     if Hardware::CPU.intel?
       url "https://github.com/beliven-it/opsi/releases/download/1.12.0/opsi_1.12.0_darwin_amd64.tar.gz"
-      sha256 "0aeb8f25bbe65d1421b89bbe949fff6686a68b2b45155b1cd55d4c593857ee39"
+      sha256 "a78711195359269b4cfd26770e08474684954f4852eda80e4fe6486a74ecc4d3"
 
       def install
         bin.install "opsi"
@@ -19,7 +19,7 @@ class Opsi < Formula
     end
     if Hardware::CPU.arm?
       url "https://github.com/beliven-it/opsi/releases/download/1.12.0/opsi_1.12.0_darwin_arm64.tar.gz"
-      sha256 "a43fae1713d61bf861277dfaefe26a7030ae47346aa63b802150aae01a5b7045"
+      sha256 "d28db59cdcd7506e3c0fbce36dec1a50f7c70f53465f058bbc418b8e3e1a7655"
 
       def install
         bin.install "opsi"
@@ -30,7 +30,7 @@ class Opsi < Formula
   on_linux do
     if Hardware::CPU.intel?
       url "https://github.com/beliven-it/opsi/releases/download/1.12.0/opsi_1.12.0_linux_amd64.tar.gz"
-      sha256 "d781ea540144ceb8303be9973b94b141d561ed9f7b597358683ac079b158a335"
+      sha256 "652a553aa66356bf1d0603478e494697d3d068dd57953503d0c30c1477a2f4d8"
 
       def install
         bin.install "opsi"
@@ -38,7 +38,7 @@ class Opsi < Formula
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
       url "https://github.com/beliven-it/opsi/releases/download/1.12.0/opsi_1.12.0_linux_arm64.tar.gz"
-      sha256 "0715987133efaa8cf305d0270d828ece33be05f258faadee243d980f548dc6e4"
+      sha256 "bdc856d01702888ee9f0bd4d8f11b17b41a1e10a446dc32c55977252009401e3"
 
       def install
         bin.install "opsi"
