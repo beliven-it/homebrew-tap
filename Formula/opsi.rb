@@ -5,21 +5,21 @@
 class Opsi < Formula
   desc "All-in-one CLI for Beliven Ops daily usage!"
   homepage ""
-  version "1.13.1"
+  version "1.13.2"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/beliven-it/opsi/releases/download/1.13.1/opsi_1.13.1_darwin_amd64.tar.gz"
-      sha256 "6f7d60357b6adb313ca2d258553de59ea57703c14fcff305de5e22615feb047e"
+      url "https://github.com/beliven-it/opsi/releases/download/1.13.2/opsi_1.13.2_darwin_amd64.tar.gz"
+      sha256 "72eae9f51fc104f79ca79097c41282c898ad105ae29be2b95ed0a14e1a50a704"
 
       def install
         bin.install "opsi"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/beliven-it/opsi/releases/download/1.13.1/opsi_1.13.1_darwin_arm64.tar.gz"
-      sha256 "19792d3c94baeb219cb3003b65511a4f526966eda29441c4982dbb07c4e449a2"
+      url "https://github.com/beliven-it/opsi/releases/download/1.13.2/opsi_1.13.2_darwin_arm64.tar.gz"
+      sha256 "75aecb338f5025eccc9a46928b9c2e43485e4bfc2d32c9c876939581bb3e5bc4"
 
       def install
         bin.install "opsi"
@@ -30,8 +30,8 @@ class Opsi < Formula
   on_linux do
     if Hardware::CPU.intel?
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/beliven-it/opsi/releases/download/1.13.1/opsi_1.13.1_linux_amd64.tar.gz"
-        sha256 "fadd61aab7d06cb0a7b69e0d0809e9121540f6ff0e34391f4e2283b107705cfa"
+        url "https://github.com/beliven-it/opsi/releases/download/1.13.2/opsi_1.13.2_linux_amd64.tar.gz"
+        sha256 "cf60d6453d24d440ccaa1701e17a6011bd8f4630051158a67db3af4597049c9f"
 
         def install
           bin.install "opsi"
@@ -40,8 +40,8 @@ class Opsi < Formula
     end
     if Hardware::CPU.arm?
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/beliven-it/opsi/releases/download/1.13.1/opsi_1.13.1_linux_arm64.tar.gz"
-        sha256 "975eb789238d6c4c400a127cde9aa45605d7aed1d7036d7705ec9b091979a2da"
+        url "https://github.com/beliven-it/opsi/releases/download/1.13.2/opsi_1.13.2_linux_arm64.tar.gz"
+        sha256 "76e8deaf5272c10235b16e7dd58b7d0ba13849cf0fa2a32694dc0c975b3a1dff"
 
         def install
           bin.install "opsi"
