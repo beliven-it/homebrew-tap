@@ -5,47 +5,41 @@
 class Opsi < Formula
   desc "All-in-one CLI for Beliven Ops daily usage!"
   homepage ""
-  version "1.13.2"
+  version "1.14.0"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/beliven-it/opsi/releases/download/1.13.2/opsi_1.13.2_darwin_amd64.tar.gz"
-      sha256 "72eae9f51fc104f79ca79097c41282c898ad105ae29be2b95ed0a14e1a50a704"
+      url "https://github.com/beliven-it/opsi/releases/download/1.14.0/opsi_1.14.0_darwin_amd64.tar.gz"
+      sha256 "aea61e5562270393fa0c16e2fa852bc2023e4112cdd5446daa97ac5686d67381"
 
-      def install
+      define_method(:install) do
         bin.install "opsi"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/beliven-it/opsi/releases/download/1.13.2/opsi_1.13.2_darwin_arm64.tar.gz"
-      sha256 "75aecb338f5025eccc9a46928b9c2e43485e4bfc2d32c9c876939581bb3e5bc4"
+      url "https://github.com/beliven-it/opsi/releases/download/1.14.0/opsi_1.14.0_darwin_arm64.tar.gz"
+      sha256 "53e9ef558112575368cdbd4335c8a5dc8fac051d12c15543213f2eea858854ec"
 
-      def install
+      define_method(:install) do
         bin.install "opsi"
       end
     end
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      if Hardware::CPU.is_64_bit?
-        url "https://github.com/beliven-it/opsi/releases/download/1.13.2/opsi_1.13.2_linux_amd64.tar.gz"
-        sha256 "cf60d6453d24d440ccaa1701e17a6011bd8f4630051158a67db3af4597049c9f"
-
-        def install
-          bin.install "opsi"
-        end
+    if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
+      url "https://github.com/beliven-it/opsi/releases/download/1.14.0/opsi_1.14.0_linux_amd64.tar.gz"
+      sha256 "4fc39ce9f9a86ddcc6a427e3a5f5af78327cef0146f28943292ea6d07ad036f7"
+      define_method(:install) do
+        bin.install "opsi"
       end
     end
-    if Hardware::CPU.arm?
-      if Hardware::CPU.is_64_bit?
-        url "https://github.com/beliven-it/opsi/releases/download/1.13.2/opsi_1.13.2_linux_arm64.tar.gz"
-        sha256 "76e8deaf5272c10235b16e7dd58b7d0ba13849cf0fa2a32694dc0c975b3a1dff"
-
-        def install
-          bin.install "opsi"
-        end
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/beliven-it/opsi/releases/download/1.14.0/opsi_1.14.0_linux_arm64.tar.gz"
+      sha256 "1b260716a469fe0815fc198fce4e962d4bfda3d345b528046ac67886b995c351"
+      define_method(:install) do
+        bin.install "opsi"
       end
     end
   end
