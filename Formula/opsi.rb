@@ -5,21 +5,21 @@
 class Opsi < Formula
   desc "All-in-one CLI for Beliven Ops daily usage!"
   homepage ""
-  version "1.14.0"
+  version "2.0.0"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/beliven-it/opsi/releases/download/1.14.0/opsi_1.14.0_darwin_amd64.tar.gz"
-      sha256 "aea61e5562270393fa0c16e2fa852bc2023e4112cdd5446daa97ac5686d67381"
+      url "https://github.com/beliven-it/opsi/releases/download/2.0.0/opsi_2.0.0_darwin_amd64.tar.gz"
+      sha256 "6ddf4a7598582fb6b99e9ae47f45320235b0260258b8d75c418f656497a2ffed"
 
       define_method(:install) do
         bin.install "opsi"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/beliven-it/opsi/releases/download/1.14.0/opsi_1.14.0_darwin_arm64.tar.gz"
-      sha256 "53e9ef558112575368cdbd4335c8a5dc8fac051d12c15543213f2eea858854ec"
+      url "https://github.com/beliven-it/opsi/releases/download/2.0.0/opsi_2.0.0_darwin_arm64.tar.gz"
+      sha256 "0898f38c5bc04f091c6b71139d7fa8e5f5025dbe35e95aa7fdde799cb0ce79fb"
 
       define_method(:install) do
         bin.install "opsi"
@@ -29,15 +29,15 @@ class Opsi < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/beliven-it/opsi/releases/download/1.14.0/opsi_1.14.0_linux_amd64.tar.gz"
-      sha256 "4fc39ce9f9a86ddcc6a427e3a5f5af78327cef0146f28943292ea6d07ad036f7"
+      url "https://github.com/beliven-it/opsi/releases/download/2.0.0/opsi_2.0.0_linux_amd64.tar.gz"
+      sha256 "82702cb4d0c31aff98dd1d93c8756208d823ed44a97f880e08a221ab75593d2f"
       define_method(:install) do
         bin.install "opsi"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/beliven-it/opsi/releases/download/1.14.0/opsi_1.14.0_linux_arm64.tar.gz"
-      sha256 "1b260716a469fe0815fc198fce4e962d4bfda3d345b528046ac67886b995c351"
+      url "https://github.com/beliven-it/opsi/releases/download/2.0.0/opsi_2.0.0_linux_arm64.tar.gz"
+      sha256 "3b2ae189df148cb2a79eed7a1c0e5bce505383c41c18692821d02eccdba6bda7"
       define_method(:install) do
         bin.install "opsi"
       end
